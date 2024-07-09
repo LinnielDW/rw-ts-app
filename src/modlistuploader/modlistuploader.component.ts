@@ -35,6 +35,8 @@ export class ModlistuploaderComponent implements OnInit {
 
   rulesData: { [id: string] : ModRuleData; } = {};
 
+  pattern = /\b(?<=\()[^0-9][a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
+
   ngOnInit(): void {
     this.modlistAnalyserService.fetchRulesData().subscribe(
       (exportData: RuleExportData[]) => {
@@ -69,7 +71,14 @@ export class ModlistuploaderComponent implements OnInit {
       // console.log(bla)
 
       if (modsTextAreaInput) {
-        this.modsParsed = modsTextAreaInput.split(/\r?\n/);
+        var modsSplit = modsTextAreaInput.split(/\r?\n/);
+
+        modsSplit.forEach(modLine => {
+          var match = modLine.match(this.pattern);
+          if (match) {
+            this.modsParsed.push(match[0].toLowerCase())
+          }
+        });
       } else {
         this.modsParsed = [];
       }
