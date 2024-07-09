@@ -10,7 +10,8 @@ export class ModRulesLoaderService {
   constructor(private http: HttpClient) {}
 
   fetchRulesData(): Observable<any[]> {
-    return this.http.get('assets/rules.csv', { responseType: 'text' }).pipe(
+    //TODO: move this to an env variable or configurable on the frontend
+    return this.http.get('https://raw.githubusercontent.com/LinnielDW/rw-ts-app/master/public/assets/rules.csv', { responseType: 'text' }).pipe(
       map((csvData: string) => {
         const parsedData = Papa.parse(csvData, {
           header: true,
