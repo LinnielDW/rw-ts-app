@@ -5,15 +5,12 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
-import { TooltipPosition, MatTooltipModule } from '@angular/material/tooltip';
-import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { ModRulesLoaderService } from '../services/modrulesloader/mod-rules-loader.service';
 import { ModRuleData, RuleExportData } from '../ModRuleData';
 import {MatTabsModule} from '@angular/material/tabs';
 
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
-import { FormControl, FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'modlist-uploader',

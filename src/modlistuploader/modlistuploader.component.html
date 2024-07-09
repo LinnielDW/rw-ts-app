@@ -1,20 +1,5 @@
-<p>Modlist checker</p>
-
 <div class="container">
-  <h2>Upload ModConfig.xml</h2>
-
-  <!-- <mat-button-toggle-group
-    [(ngModel)]="modlistUploadStyle"
-    aria-label="Font Style"
-    style="width: 100%"
-  >
-    <mat-button-toggle value="upload" class="inputModeSelector"
-      >Upload</mat-button-toggle
-    >
-    <mat-button-toggle value="textarea" class="inputModeSelector"
-      >Text</mat-button-toggle
-    >
-  </mat-button-toggle-group> -->
+  <h2>Modlist checker</h2>
 
   <mat-tab-group
     animationDuration="0ms"
@@ -31,6 +16,7 @@
     </mat-tab>
   </mat-tab-group>
 
+  <!-- TODO: remove these horrible brs and actually do some real styling -->
   <br /><br />
   <div>
     <button (click)="parseModsInput($event)">scan mods</button>
