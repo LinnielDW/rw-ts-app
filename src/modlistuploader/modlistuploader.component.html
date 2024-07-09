@@ -1,0 +1,48 @@
+<p>Modlist checker</p>
+
+<div class="container">
+  <h2>Upload ModConfig.xml</h2>
+
+  <!-- <mat-button-toggle-group
+    [(ngModel)]="modlistUploadStyle"
+    aria-label="Font Style"
+    style="width: 100%"
+  >
+    <mat-button-toggle value="upload" class="inputModeSelector"
+      >Upload</mat-button-toggle
+    >
+    <mat-button-toggle value="textarea" class="inputModeSelector"
+      >Text</mat-button-toggle
+    >
+  </mat-button-toggle-group> -->
+
+  <mat-tab-group
+    animationDuration="0ms"
+    [selectedIndex]="selected.value"
+    (selectedIndexChange)="selected.setValue($event)"
+  >
+    <mat-tab label="Upload ModConfig">
+      <br />
+      <input type="file" accept=".xml" name="ModConfigInput" />
+    </mat-tab>
+    <mat-tab label="Text">
+      <br />
+      <textarea name="TextAreaInput" ></textarea>
+    </mat-tab>
+  </mat-tab-group>
+
+  <br /><br />
+  <div>
+    <button (click)="parseModsInput($event)">scan mods</button>
+  </div>
+
+  <div *ngFor="let item of modsParsed; index as i">
+    <div
+      [matTooltip]="getTooltip(item)"
+      matTooltipPosition="right"
+      [ngClass]="getSeverity(item)"
+    >
+      {{ item }}
+    </div>
+  </div>
+</div>
