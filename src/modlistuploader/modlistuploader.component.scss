@@ -1,12 +1,24 @@
-
-.inputModeSelector{
-    width: 50%; 
-    // display: inline-block;
+.inputModeSelector {
+  width: 50%;
+  // display: inline-block;
 }
 
 // classifications
-//TODO: add more classifications
-.severe{
-    background-color: red;
-    color: white;
+.severe {
+  background-color: red;
+  color: white;
+}
+
+.dire {
+  background-color: darkred;
+  color: white;
+  font-weight: 900;
+}
+.warning {
+  background-color: yellow;
+  color: black;
+}
+.info {
+  background-color: cornflowerblue;
+  color: black;
 }
