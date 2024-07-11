@@ -19,3 +19,8 @@ export interface TroublesomeMod {
 export interface TroublesomeModsDatabase {
   [key: string]: TroublesomeMod;
 }
+
+export interface TroublesomeModsDatabaseDTO {
+  TroublesomeModsDatabase: TroublesomeModsDatabase;
+}
+

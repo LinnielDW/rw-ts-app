@@ -53,7 +53,7 @@ export class ModlistuploaderComponent implements OnInit {
   // pattern = /\b(?<=\()[^0-9][a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
 
   ngOnInit(): void {
-    // this.getRules();
+    this.modlistAnalyserService.getRules(this.rulesUrl);
   }
 
   // xmlContent: string = '';
@@ -63,6 +63,7 @@ export class ModlistuploaderComponent implements OnInit {
   //TODO: move mod list parsing to own service
   parseModsInput(event: Event): void {
     this.rulesData = this.modlistAnalyserService.getRules(this.rulesUrl);
+    console.log(this.rulesData)
     this.modsParsed = [];
 
     if (this.selected.value == 0) {
@@ -74,7 +75,7 @@ export class ModlistuploaderComponent implements OnInit {
       const modsTextAreaInput = (<HTMLInputElement>(
         document.getElementsByName('TextAreaInput')[0]
       )).value;
-      console.log(modsTextAreaInput);
+      // console.log(modsTextAreaInput);
       this.readModlistText(modsTextAreaInput);
     }
   }
@@ -145,7 +146,7 @@ export class ModlistuploaderComponent implements OnInit {
 
   //TODO: consider moving this to a soft match looking for keywords instead of hard dictionary match (like it was before basically)
   getSeverity(item: string): string {
-    var r = this.rulesData[item]?.threat;
+    var r = this.rulesData[item.toLowerCase()]?.threat;
 
     switch (r) {
       case '5':
@@ -154,15 +155,15 @@ export class ModlistuploaderComponent implements OnInit {
         return 'severe';
       case '3':
         return 'warning';
+      case '1':
       case '2':
         return 'info';
-      case '1':
       default:
-        return 'info';
+        return '';
     }
   }
 
   getTooltip(item: string): string {
-    return this.rulesData[item]?.reason;
+    return this.rulesData[item.toLowerCase()]?.reason;
   }
 }

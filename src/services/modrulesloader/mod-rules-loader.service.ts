@@ -7,6 +7,7 @@ import {
   ModRuleData,
   RuleExportData,
   TroublesomeModsDatabase,
+  TroublesomeModsDatabaseDTO,
 } from '../../ModRuleData';
 @Injectable({
   providedIn: 'root',
@@ -14,36 +15,40 @@ import {
 export class ModRulesLoaderService {
   constructor(private http: HttpClient) {}
 
-  fetchRulesData(url: string): Observable<any[]> {
-    //TODO: move this to an env variable or configurable on the frontend
-    return this.http.get(url, { responseType: 'text' }).pipe(
-      map((csvData: string) => {
-        const parsedData = Papa.parse(csvData, {
-          header: true,
-          skipEmptyLines: true,
-        });
-        return parsedData.data;
-      })
-    );
-  }
+  troublesomModsDb: TroublesomeModsDatabase = {};
+  sanitizedData: TroublesomeModsDatabase = {};
 
-  getTroublesomeMods(url: string): Observable<TroublesomeModsDatabase> {
-    return this.http.get<TroublesomeModsDatabase>(url, {
+  getTroublesomeMods(url: string): Observable<TroublesomeModsDatabaseDTO> {
+    return this.http.get<TroublesomeModsDatabaseDTO>(url, {
       responseType: 'json',
     });
   }
 
   getRules(url: string): TroublesomeModsDatabase {
-    var troublesomModsDb: TroublesomeModsDatabase = {};
-    this.getTroublesomeMods(url).subscribe(
-      (data) => {
-        troublesomModsDb = data;
+
+    this.getTroublesomeMods(url).subscribe({
+      next: (data: TroublesomeModsDatabaseDTO) => {
+        // try {
+          // console.log(data.TroublesomeModsDatabase)
+          Object.entries(data.TroublesomeModsDatabase).forEach(
+            ([key, value]) => {
+              // console.log(key.toLowerCase());
+              this.sanitizedData[key.toLowerCase()] = value;
+              // console.log(sanitizedData[key.toLowerCase()])
+            }
+          );
+          // console.log(this.sanitizedData);
+          this.troublesomModsDb = this.sanitizedData;
+          return this.troublesomModsDb;
+        // } catch (e) {
+        //   console.error('Error processing data:', e);
+        // }
       },
-      (error) => {
+      error: (error) => {
         console.error('Error fetching troublesome mods data:', error);
       }
-    );
-    return troublesomModsDb;
+    });
+    return this.troublesomModsDb;
   }
 
   //DEPRICATED
@@ -68,5 +73,18 @@ export class ModRulesLoaderService {
   //     }
   //   );
   //   return rulesData;
+  // }
+  
+  // fetchRulesData(url: string): Observable<any[]> {
+  //   //TODO: move this to an env variable or configurable on the frontend
+  //   return this.http.get(url, { responseType: 'text' }).pipe(
+  //     map((csvData: string) => {
+  //       const parsedData = Papa.parse(csvData, {
+  //         header: true,
+  //         skipEmptyLines: true,
+  //       });
+  //       return parsedData.data;
+  //     })
+  //   );
   // }
 }
