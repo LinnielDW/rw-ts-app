@@ -10,12 +10,12 @@ import { ModRulesLoaderService } from '../services/modrulesloader/mod-rules-load
 import { ModRuleData, RuleExportData } from '../ModRuleData';
 import {MatTabsModule} from '@angular/material/tabs';
 
-import { FormControl } from '@angular/forms';
+import { FormControl, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'modlist-uploader',
   standalone: true,
-  imports: [CommonModule, MatTooltipModule,MatTabsModule],
+  imports: [CommonModule, MatTooltipModule,MatTabsModule,FormsModule],
   templateUrl: './modlistuploader.component.html',
   styleUrl: './modlistuploader.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -35,60 +35,49 @@ export class ModlistuploaderComponent implements OnInit {
 
   rulesData: { [id: string] : ModRuleData; } = {};
 
-  pattern = /\b(?<=\()[^0-9][a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
+  // pattern = /.*?\(.*?\)/g
+  pattern = /\b(?<=\()[a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
+  // pattern = /\b(?<=\()[^0-9][a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
+
+  defaultRulesUrl = 'https://raw.githubusercontent.com/LinnielDW/rw-ts-app/master/public/assets/rules.csv';
+  rulesUrl: string = this.defaultRulesUrl;
 
   ngOnInit(): void {
-    this.modlistAnalyserService.fetchRulesData().subscribe(
-      (exportData: RuleExportData[]) => {
-        if (exportData.length > 0) {
-          // this.rulesHeaders = Object.keys(exportData[0]);
-          exportData.forEach(exportedRule => {
-            this.rulesData[exportedRule.name] = {ratingClass: exportedRule.ratingClass, note: exportedRule.note}
-          });
-        }
-        console.debug("loading ruleset:")
-        console.debug(this.rulesData);
-      },
-      (error) => {
-        console.error('Error fetching CSV data:', error);
-      }
-    );
+    // this.getRules();
   }
 
   // xmlContent: string = '';
   // specificNodeContent: string = '';
   selected = new FormControl(0);
 
+  //TODO: move mod list parsing to own service
   parseModsInput(event: Event): void{
-    const file = (<HTMLInputElement>document.getElementsByName("ModConfigInput")[0])?.files?.[0];
+    this.rulesData = this.modlistAnalyserService.getRules(this.rulesUrl.length == 0 ? this.defaultRulesUrl : this.rulesUrl);
+    this.modsParsed = [];
     
     if(this.selected.value == 0){
-
+      const file = (<HTMLInputElement>document.getElementsByName("ModConfigInput")[0])?.files?.[0];
       this.readModConfigFile(file);
     }
-    else{
+    else {
       const modsTextAreaInput = (<HTMLInputElement>document.getElementsByName("TextAreaInput")[0]).value;
-      // console.log(bla)
-
-      if (modsTextAreaInput) {
-        var modsSplit = modsTextAreaInput.split(/\r?\n/);
-
-        modsSplit.forEach(modLine => {
-          var match = modLine.match(this.pattern);
-          if (match) {
-            this.modsParsed.push(match[0].toLowerCase())
-          }
-        });
-      } else {
-        this.modsParsed = [];
-      }
+      this.readModlistText(modsTextAreaInput);
     }
   }
 
-  onFileSelected(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    const file = input?.files?.[0];
-    this.readModConfigFile(file);
+  private readModlistText(modsTextAreaInput: string) {
+    if (modsTextAreaInput) {
+      var modsSplit = modsTextAreaInput.split(/\r?\n/);
+
+      modsSplit.forEach(modLine => {
+        var match = modLine.match(this.pattern);
+        if (match) {
+          this.modsParsed.push(match[0].toLowerCase());
+        }
+      });
+    } else {
+      this.modsParsed = [];
+    }
   }
 
   private readModConfigFile(file: File | undefined) {
@@ -104,7 +93,6 @@ export class ModlistuploaderComponent implements OnInit {
   }
 
   parseXML(xmlString: string): void {
-    this.modsParsed = [];
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
 
@@ -136,6 +124,7 @@ export class ModlistuploaderComponent implements OnInit {
     this.changeDetectorRef.detectChanges();
   }
 
+  //TODO: consider moving this to a soft match looking for keywords instead of hard dictionary match (like it was before basically)
   getSeverity(item: string): string {
     var r = this.rulesData[item]?.ratingClass;
 
