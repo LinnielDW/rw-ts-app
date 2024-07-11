@@ -23,7 +23,7 @@ import { ModlistadvancedtabComponent } from "../modlistadvancedtab/modlistadvanc
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ModlistuploaderComponent implements OnInit {
-  public defaultRulesUrl: string = 'https://raw.githubusercontent.com/LinnielDW/rw-ts-app/master/public/assets/rules.csv';
+  public defaultRulesUrl: string = 'https://raw.githubusercontent.com/LinnielDW/rw-ts-app/master/public/assets/TroublesomeDatabase.json';
   rulesUrl: string = this.defaultRulesUrl;
   
   constructor(
