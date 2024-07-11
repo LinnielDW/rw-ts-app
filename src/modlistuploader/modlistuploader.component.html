@@ -1,26 +1,38 @@
 <div class="container">
   <h2>Modlist checker</h2>
 
-  <mat-tab-group
-    animationDuration="0ms"
-    [selectedIndex]="selected.value"
-    (selectedIndexChange)="selected.setValue($event)"
-  >
-    <mat-tab label="Upload ModConfig">
-      <br />
-      <input type="file" accept=".xml" name="ModConfigInput" />
+  <mat-tab-group animationDuration="0ms">
+    <mat-tab label="Modlist">
+      <div>
+        Instructions:
+        TODO
+      </div>
+      <mat-tab-group
+        animationDuration="0ms"
+        [selectedIndex]="selected.value"
+        (selectedIndexChange)="selected.setValue($event)"
+      >
+        <mat-tab label="Upload ModConfig">
+          <br />
+          <input type="file" accept=".xml" name="ModConfigInput" />
+        </mat-tab>
+        <mat-tab label="Text">
+          <br />
+          <textarea name="TextAreaInput"></textarea>
+        </mat-tab>
+      </mat-tab-group>
+
+      <!-- TODO: remove these horrible brs and actually do some real styling -->
+      <br /><br />
+      <div>
+        <button (click)="parseModsInput($event)">scan mods</button>
+      </div>
     </mat-tab>
-    <mat-tab label="Text">
-      <br />
-      <textarea name="TextAreaInput" ></textarea>
+    <mat-tab label="Advanced">
+      <label>rulesUrl: </label>
+      <input type="text" [defaultValue]="defaultRulesUrl" [(ngModel)]="rulesUrl"/>
     </mat-tab>
   </mat-tab-group>
-
-  <!-- TODO: remove these horrible brs and actually do some real styling -->
-  <br /><br />
-  <div>
-    <button (click)="parseModsInput($event)">scan mods</button>
-  </div>
 
   <div *ngFor="let item of modsParsed; index as i">
     <div
