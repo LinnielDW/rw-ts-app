@@ -8,6 +8,16 @@
       "preLaunchTask": "npm: build",
     },
     {
+      "name": "ng build production",
+      "type": "node",
+      "preLaunchTask": "npm: buildprod",
+    },
+    {
+      "name": "ng deploy site",
+      "type": "node",
+      "preLaunchTask": "npm: deploySite",
+    },
+    {
       "name": "ng serve",
       "type": "chrome",
       "request": "launch",
