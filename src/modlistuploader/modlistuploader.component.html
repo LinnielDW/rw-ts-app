@@ -29,8 +29,7 @@
       </div>
     </mat-tab>
     <mat-tab label="Advanced">
-      <label>rulesUrl: </label>
-      <input type="text" [defaultValue]="defaultRulesUrl" [(ngModel)]="rulesUrl"/>
+      <modlistadvancedtab [defaultRulesUrl]="defaultRulesUrl" [(rulesUrl)]="rulesUrl" ></modlistadvancedtab>
     </mat-tab>
   </mat-tab-group>
 

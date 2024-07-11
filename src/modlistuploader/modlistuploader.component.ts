@@ -4,6 +4,7 @@ import {
   ChangeDetectorRef,
   Component,
   OnInit,
+  ViewChild,
 } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ModRulesLoaderService } from '../services/modrulesloader/mod-rules-loader.service';
@@ -11,25 +12,24 @@ import { ModRuleData, RuleExportData } from '../ModRuleData';
 import {MatTabsModule} from '@angular/material/tabs';
 
 import { FormControl, FormsModule } from '@angular/forms';
+import { ModlistadvancedtabComponent } from "../modlistadvancedtab/modlistadvancedtab.component";
 
 @Component({
   selector: 'modlist-uploader',
   standalone: true,
-  imports: [CommonModule, MatTooltipModule,MatTabsModule,FormsModule],
+  imports: [CommonModule, MatTooltipModule, MatTabsModule, FormsModule, ModlistadvancedtabComponent],
   templateUrl: './modlistuploader.component.html',
   styleUrl: './modlistuploader.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ModlistuploaderComponent implements OnInit {
+  public defaultRulesUrl: string = 'https://raw.githubusercontent.com/LinnielDW/rw-ts-app/master/public/assets/rules.csv';
+  rulesUrl: string = this.defaultRulesUrl;
+  
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     private modlistAnalyserService: ModRulesLoaderService
   ) {}
-
-  
-  modlistUploadStyle: string = "upload";
-  // rulesHeaders: string[] = [];
-
   
   modsParsed: string[] = [];
 
@@ -39,8 +39,6 @@ export class ModlistuploaderComponent implements OnInit {
   pattern = /\b(?<=\()[a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
   // pattern = /\b(?<=\()[^0-9][a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
 
-  defaultRulesUrl = 'https://raw.githubusercontent.com/LinnielDW/rw-ts-app/master/public/assets/rules.csv';
-  rulesUrl: string = this.defaultRulesUrl;
 
   ngOnInit(): void {
     // this.getRules();
@@ -52,7 +50,7 @@ export class ModlistuploaderComponent implements OnInit {
 
   //TODO: move mod list parsing to own service
   parseModsInput(event: Event): void{
-    this.rulesData = this.modlistAnalyserService.getRules(this.rulesUrl.length == 0 ? this.defaultRulesUrl : this.rulesUrl);
+    this.rulesData = this.modlistAnalyserService.getRules(this.rulesUrl);
     this.modsParsed = [];
     
     if(this.selected.value == 0){
