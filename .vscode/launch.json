@@ -3,6 +3,11 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "ng build",
+      "type": "node",
+      "preLaunchTask": "npm: build",
+    },
+    {
       "name": "ng serve",
       "type": "chrome",
       "request": "launch",
