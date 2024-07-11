@@ -37,6 +37,8 @@ export class ModlistuploaderComponent implements OnInit {
 
   // pattern = /.*?\(.*?\)/g
   pattern = /\b(?<=\()[a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
+  
+  pattern2 = /\b[a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
   // pattern = /\b(?<=\()[^0-9][a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
 
 
@@ -59,6 +61,7 @@ export class ModlistuploaderComponent implements OnInit {
     }
     else {
       const modsTextAreaInput = (<HTMLInputElement>document.getElementsByName("TextAreaInput")[0]).value;
+      console.log(modsTextAreaInput)
       this.readModlistText(modsTextAreaInput);
     }
   }
@@ -67,10 +70,17 @@ export class ModlistuploaderComponent implements OnInit {
     if (modsTextAreaInput) {
       var modsSplit = modsTextAreaInput.split(/\r?\n/);
 
+      var match;
       modsSplit.forEach(modLine => {
-        var match = modLine.match(this.pattern);
+        match = modLine.match(this.pattern);
         if (match) {
           this.modsParsed.push(match[0].toLowerCase());
+        }
+        else {
+          match = modLine.match(this.pattern2);
+          if (match) {
+            this.modsParsed.push(match[0].toLowerCase());
+          }
         }
       });
     } else {
