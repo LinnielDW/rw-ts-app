@@ -8,3 +8,14 @@ export interface RuleExportData {
   ratingClass: string;
   note: string;
 }
+
+
+export interface TroublesomeMod {
+  modName: string;
+  threat: string;
+  reason: string;
+}
+
+export interface TroublesomeModsDatabase {
+  [key: string]: TroublesomeMod;
+}

@@ -1,0 +1,599 @@
+{
+  "TroublesomeModsDatabase": {
+    "Community.Psychology.UnofficialUpdate": {
+      "modName": "Psychology (unofficial) v1.1-1.4",
+      "threat": "4",
+      "reason": "On life support since RW 1.1. Ancient code and barely maintained. Causes major performance issues as well as game-breaking issues."
+    },
+    "spoonshortage.ADogSaidAnimalProsthetics": {
+      "modName": "A Dog Said...",
+      "threat": "2",
+      "reason": "Direct Successor: A Dog Said... 2"
+    },
+    "razor2.3.AnotherRimworldMod.AutoCutBlight": {
+      "modName": "Auto-Cut Blight",
+      "threat": "3",
+      "reason": "Included in Smart Farming which also offers other QoL"
+    },
+    "AdamBucior.BetterElectronics": {
+      "modName": "Better Electronics",
+      "threat": "4",
+      "reason": "Visual glitches, reported incompatibilities, should be profiled for performance"
+    },
+    "V1024.EBFramework": {
+      "modName": "Elite Bionics Framework",
+      "threat": "2",
+      "reason": "Performance overhead, scales with bionics/hediffs - significant lategame-impact for only little gameplay-gain. Also part of dependency cascades; updates can break multiple mods and it tends to take some time until every involved mod will be fixed"
+    },
+    "rimfridge.kv.rw": {
+      "modName": "RimFridge: Now with Shelves!",
+      "threat": "3",
+      "reason": "Constant performance impact, ideally replaced with either Simple Utilities: Fridge, or even better a more modern storage-mod offering cooling"
+    },
+    "com.github.alandariva.moreplanning": {
+      "modName": "More Planning [1.5]",
+      "threat": "2",
+      "reason": "Replacement: Planning Extended"
+    },
+    "jecrell.doorsexpanded": {
+      "modName": "Doors Expanded",
+      "threat": "3",
+      "reason": "Old, partially buggy in 1.5, can easily be replaced with any more modern mod adding double\u002B doors based on vanilla\u0027s own system"
+    },
+    "Vesper.EGIHologramsandProjectors": {
+      "modName": "EGI Holograms and Projectors",
+      "threat": "1",
+      "reason": "Even after re-work, still significant memory-utilization. Only recommended on systems with AT LEAST 6GB vRAM \u002B 16GB RAM. If you encounter crashes or run low on memory, this would be the single best candidate to remove!"
+    },
+    "jecrell.jecstools": {
+      "modName": "JecsTools",
+      "threat": "4",
+      "reason": "Old, slow - so is everything using it as dependency. Basically everything based on it can be replaced with more modern solutions."
+    },
+    "CarnySenpai.EnableOversizedWeapons": {
+      "modName": "Enable Oversized Weapons",
+      "threat": "3",
+      "reason": "Slow, also part of more reliable frameworks. If you have a mod still using it, think twice if it is really worth the performance hit!"
+    },
+    "aRandomKiwi.GuardsForMe": {
+      "modName": "Guards For Me",
+      "threat": "3",
+      "reason": "Old, barely maintained. Direct successor: Guarding Pawns"
+    },
+    "Taveron.IncreasedStack": {
+      "modName": "Increased Stack",
+      "threat": "4",
+      "reason": "Crude, buggy. Direct replacement: OgreStack"
+    },
+    "ubergarm.kanbanstockpile": {
+      "modName": "KanbanStockpile",
+      "threat": "2",
+      "reason": "Like most similar mods significant performance overhead. Optimal replacement depends on exact use of the mod."
+    },
+    "falconne.LabelsOnFloor": {
+      "modName": "Labels on Floor",
+      "threat": "3",
+      "reason": "Significant performance overhead"
+    },
+    "ratys.madskills": {
+      "modName": "Mad Skills",
+      "threat": "1",
+      "reason": "Currently incompatible with Vanilla Skills Expanded. "
+    },
+    "nerdwonder.mixedblock": {
+      "modName": "Mixed Stone Blocks",
+      "threat": "1",
+      "reason": "Many incompatibilities with modded wall-types. Graphical glitches."
+    },
+    "jp.perfectpathing": {
+      "modName": "Perfect Pathfinding",
+      "threat": "3",
+      "reason": "Significant performance impact. Easily replaceable with Clean Pathfinding."
+    },
+    "Fluffy.Pharmacist": {
+      "modName": "Pharmacist",
+      "threat": "3",
+      "reason": "Dated, unmaintained. Direct replacement: Choose Your Medicine"
+    },
+    "co.uk.epicguru.rimforgepoles": {
+      "modName": "Power Poles",
+      "threat": "2",
+      "reason": "Historically causes issues on and off "
+    },
+    "Woolstrand.RealRuins": {
+      "modName": "Real Ruins",
+      "threat": "3",
+      "reason": "Consistent map-generation breaking since at least 1.4 - can lead to gamebreaking situations with quest-/encounter-maps"
+    },
+    "rupal.rimpymodmanagerdatabase": {
+      "modName": "RimPy Mod Manager Database",
+      "threat": "1",
+      "reason": "As instructed on the mod-page; this should not be set as active mod!"
+    },
+    "mobius.royaltytweaks": {
+      "modName": "Royalty Tweaks",
+      "threat": "3",
+      "reason": "Seen consistently causing world-generation to fail"
+    },
+    "roolo.RunAndGun": {
+      "modName": "RunAndGun",
+      "threat": "3",
+      "reason": "Old, buggy, unmaintained. Direct Replacement: Tacticowl"
+    },
+    "neronix17.embrasures": {
+      "modName": "Seamless Embrasures",
+      "threat": "2",
+      "reason": "Significant performance impact due to changes to rendering. Any regular embrasures mod would most likely be a better option to avoid unnecessary performance issues."
+    },
+    "Mlie.SomeThingsFloat": {
+      "modName": "Some Things Float",
+      "threat": "2",
+      "reason": "Has been seen regularly to cause different incompatibilities."
+    },
+    "Indeed.StackXXL": {
+      "modName": "Stack XXL",
+      "threat": "2",
+      "reason": "Slightly better alternative: OgreStack"
+    },
+    "Andromeda.StackGap": {
+      "modName": "Stack gap",
+      "threat": "3",
+      "reason": "As similar stack-limiter significant performance overhead. Might be replaced with modern storage solutions/frameworks including such feature."
+    },
+    "Mlie.StockpileStackLimit": {
+      "modName": "Stockpile Stack Limit",
+      "threat": "3",
+      "reason": "Might be replaced with a more modern storage framework including this feature."
+    },
+    "pathavoid.kv.rw": {
+      "modName": "Path Avoid",
+      "threat": "2",
+      "reason": "Significant performance impact. Could be somewhat replaced with Clean Pathfinding."
+    },
+    "VIS.RocksAndStones": {
+      "modName": "Visandars Rocks and Stones",
+      "threat": "1",
+      "reason": "Retexture included in ReGrowth:Core"
+    },
+    "Victor.WallsAreSolid": {
+      "modName": "Walls are solid",
+      "threat": "3",
+      "reason": "Problematic implementation. Indestructible walls (and similar) are an invitation for all sorts of bugs and issues. Better replaced with a different approach leading to similar results like: Fists Aren\u0027t Made of Steel"
+    },
+    "Aoba.WarCasket": {
+      "modName": "Warcaskets Expanded",
+      "threat": "1",
+      "reason": "Mostly redundant. A 1.3/1.4 update to VFE Pirates added very similar warcasket variants to the base-mod. Not technically bad, just mostly redundant..."
+    },
+    "zal.wmbp": {
+      "modName": "World Map Beautification Project",
+      "threat": "1",
+      "reason": "Also included in ReGrowth:Core"
+    },
+    "pyrce.mass.graves.continued": {
+      "modName": "Mass Graves",
+      "threat": "2",
+      "reason": "Corpses on map always have been a concern based on the way they are coded. For better performance and less vulnerability for save-corruption any other method of getting rid of corpses might be beneficial. Especially with new methods added by Anomaly."
+    },
+    "Mlie.NoVersionWarning": {
+      "modName": "No Version Warning",
+      "threat": "4",
+      "reason": "Using outdated mods is in general something to avoid. This mod just adds a false sense of security and might hide obvious troublemaker from the user by hiding the fact that they are outdated. The idea of this mods is conceptually flawed and backwards and only teaches people unhealthy behaviour in regards to building their modlists!"
+    },
+    "Taranchuk.FasterGameLoading": {
+      "modName": "Faster Game Loading",
+      "threat": "1",
+      "reason": "In the case of texture-issues, or just in general to prevent such cases - make sure to disable the experimental features in the settings. Ideally only the very top/first option is toggled on. It will have the most impact on initialization-speed anyways, with the options below usually only shaving off a few seconds."
+    },
+    "XMB.AncientMiningIndustry.MO": {
+      "modName": "Ancient Mining Industry",
+      "threat": "2",
+      "reason": "Deep drills have currently a significant performance impact!"
+    },
+    "coldcrow.betterorbitaltraders": {
+      "modName": "Better Orbital Traders",
+      "threat": "2",
+      "reason": "Can cause issues by spawning animals in trader-stock. Easily replaceable with: Trading Options"
+    },
+    "vk.compressedraid.latest": {
+      "modName": "Compressed Raids",
+      "threat": "2",
+      "reason": "Some incompatibilities, not well-maintained these days. Can break story-quests in mods like VFE:Empire and with Storyteller like Winston Waves."
+    },
+    "smartkar.enhancedbeliefs": {
+      "modName": "Enhanced Beliefs",
+      "threat": "3",
+      "reason": "Currently significant performance overhead based on a bad implementation in regards to world-pawns."
+    },
+    "dhultgren.keepbedownership": {
+      "modName": "Keep Bed Ownership",
+      "threat": "3",
+      "reason": "Mostly obsolete in the first place (bug was fixed in vanilla) and has seen in rare occasions to cause more issues."
+    },
+    "neptimus7.progressrenderer": {
+      "modName": "Progress Renderer",
+      "threat": "1",
+      "reason": "Can cause high memory-utilization"
+    },
+    "ilyvion.QualityBionics": {
+      "modName": "Quality Bionics",
+      "threat": "2",
+      "reason": "Multiple reported incompatibilities with different prosthetic-mods."
+    },
+    "MYDE.AerocraftFramework": {
+      "modName": "Aerocraft Framework",
+      "threat": "3",
+      "reason": "Quite experimental. Different bugs and not well maintained."
+    },
+    "Allow Tool": {
+      "modName": "Allow Tool",
+      "threat": "2",
+      "reason": "Haul urgently and drafted hunt known to be buggy. Can disable buggy features in the option to avoid triggering them."
+    },
+    "fed1sPlay.PawnTargetFix": {
+      "modName": "PawnTargetFix",
+      "threat": "2",
+      "reason": "Significant performance impact especially in combat situations."
+    },
+    "xeonovadan.visiblepants": {
+      "modName": "Visible Pants",
+      "threat": "2",
+      "reason": "Hard on performance"
+    },
+    "safetymets.safetyhelmetwithlight": {
+      "modName": "Safety Helmet with Light",
+      "threat": "2",
+      "reason": "Moving lights are always hard on performance"
+    },
+    "mlie.convertthenenslave": {
+      "modName": "Convert Then Enslave",
+      "threat": "2",
+      "reason": "Succeeded by: Custom Prisoner Interactions by Mlie"
+    },
+    "mlie.convertthenrecruit": {
+      "modName": "Convert Then Recruit",
+      "threat": "2",
+      "reason": "Succeeded by: Custom Prisoner Interactions by Mlie"
+    },
+    "mlie.convertthenrelease": {
+      "modName": "Convert Then Release",
+      "threat": "2",
+      "reason": "Succeeded by: Custom Prisoner Interactions by Mlie"
+    },
+    "frozensnowfox.filthvanisheswithrainandtime": {
+      "modName": "[FSF] Filth Vanishes With Rain And Time",
+      "threat": "1",
+      "reason": "Available as all-in-one: FrozenSnowFox Tweaks"
+    },
+    "frozensnowfox.nodefaultshelfstorage": {
+      "modName": "[FSF] No Default Shelf Storage",
+      "threat": "1",
+      "reason": "Available as all-in-one: FrozenSnowFox Tweaks"
+    },
+    "frozensnowfox.noempiretradingpermit": {
+      "modName": "[FSF] No Empire Trading Permit",
+      "threat": "1",
+      "reason": "Available as all-in-one: FrozenSnowFox Tweaks"
+    },
+    "frozensnowfox.nooneeverflees": {
+      "modName": "[FSF] No One Ever Flees",
+      "threat": "1",
+      "reason": "Available as all-in-one: FrozenSnowFox Tweaks"
+    },
+    "frozensnowfox.betterpawnlendingquest": {
+      "modName": "Better Pawn Lending Quest",
+      "threat": "1",
+      "reason": "Available as all-in-one: FrozenSnowFox Tweaks"
+    },
+    "frozensnowfox.encountermapresources": {
+      "modName": "Encounter Map Resources",
+      "threat": "1",
+      "reason": "Available as all-in-one: FrozenSnowFox Tweaks"
+    },
+    "frozensnowfox.growableambrosia": {
+      "modName": "Growable Ambrosia",
+      "threat": "1",
+      "reason": "Available as all-in-one: FrozenSnowFox Tweaks"
+    },
+    "frozensnowfox.growablegrass": {
+      "modName": "Growable Grass",
+      "threat": "1",
+      "reason": "Available as all-in-one: FrozenSnowFox Tweaks"
+    },
+    "frozensnowfox.growablemushrooms": {
+      "modName": "Growable Mushrooms",
+      "threat": "1",
+      "reason": "Available as all-in-one: FrozenSnowFox Tweaks"
+    },
+    "frozensnowfox.improvedvanometricpowercells": {
+      "modName": "Improved Vanometric Power Cells",
+      "threat": "1",
+      "reason": "Available as all-in-one: FrozenSnowFox Tweaks"
+    },
+    "frozensnowfox.indoortreefarms": {
+      "modName": "Indoor Tree Farms",
+      "threat": "1",
+      "reason": "Available as all-in-one: FrozenSnowFox Tweaks"
+    },
+    "frozensnowfox.morequests": {
+      "modName": "More Quests",
+      "threat": "1",
+      "reason": "Available as all-in-one: FrozenSnowFox Tweaks"
+    },
+    "roolo.dualwield": {
+      "modName": "Dual Wield",
+      "threat": "3",
+      "reason": "Old, buggy, unmaintained. Direct Replacement: Tacticowl"
+    },
+    "roolo.searchanddestroy": {
+      "modName": "Search & Destroy",
+      "threat": "3",
+      "reason": "Old, buggy, unmaintained. Direct Replacement: Tacticowl"
+    },
+    "wvc.sergkart.biotech.mechanoididleoptimization": {
+      "modName": "Mechanoid Idle Optimization",
+      "threat": "4",
+      "reason": "Fixed in vanilla and succeeded by; WVC - Work Modes"
+    },
+    "herdmigration.velcroboy333": {
+      "modName": "Herd Migration Revival",
+      "threat": "3",
+      "reason": "Basically included in: FrozenSnowFox Tweaks"
+    },
+    "mlie.mealradius": {
+      "modName": "Meal Radius (Continued)",
+      "threat": "2",
+      "reason": "Basically included in: FrozenSnowFox Tweaks"
+    },
+    "mlie.nofoodfights": {
+      "modName": "No Food Fights",
+      "threat": "2",
+      "reason": "Basically included in: FrozenSnowFox Tweaks"
+    },
+    "ltoddy.notaweapon": {
+      "modName": "Not a Weapon",
+      "threat": "2",
+      "reason": "Basically included in: FrozenSnowFox Tweaks"
+    },
+    "kathanon.tablerange": {
+      "modName": "Table Range",
+      "threat": "2",
+      "reason": "Basically included in: FrozenSnowFox Tweaks"
+    },
+    "kd8lvt.woodisnotaweapon": {
+      "modName": "Wood Is Not A Weapon",
+      "threat": "2",
+      "reason": "Basically included in: FrozenSnowFox Tweaks"
+    },
+    "ducks.noideologylimits": {
+      "modName": "Ducks' No Limit - Ideology (Continued)",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "fluffy.fluffybreakdowns": {
+      "modName": "Fluffy Breakdowns",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "jsin.lagfreetorches": {
+      "modName": "Lag Free Torches And More",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "xqt.lagfreelampsrevamped.three": {
+      "modName": "Lag Free Lamps Revamped 3 (Lite)",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "xqt.fuellessboogaloo": {
+      "modName": "Lag-Free Lamps Revamped 2",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "dvs.ninetyninepercent": {
+      "modName": "99 Percent [Updated]",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "bustedbunny.alldogsaregoodbois": {
+      "modName": "All Dogs Are Good Bois",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "z4k97b.altarsinthroneroom": {
+      "modName": "Allow Altars in Throneroom",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "eb.bettercrashedshipparts": {
+      "modName": "Better Crashed Ship Parts",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "adambucior.betterelectronics": {
+      "modName": "Better Electronics",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "zylle.boomalopesbleedchemfuel": {
+      "modName": "Boomalopes Bleed Chemfuel",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "changeskilllevels.kv.rw": {
+      "modName": "Change Skill Levels",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "5katz.commschat": {
+      "modName": "Chatting On Comms",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "amch.deconstructpercentage": {
+      "modName": "Configurable Deconstruct Percentage",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "garwel.destroyitem": {
+      "modName": "Destroy Item",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "proxyer.dismantleancientjunk": {
+      "modName": "Dismantle Ancient Junk",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "romyashi.extractanyplant": {
+      "modName": "Extract Any Plant",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "neceros.fastersmoothing": {
+      "modName": "Faster Smoothing (1.4)",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "thegoofyone.glowingambrosia": {
+      "modName": "Glowing Ambrosia",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "syrchalis.glowinghealroot": {
+      "modName": "Glowing Healroot",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "mlie.glowpodsusedarklight": {
+      "modName": "Glowpods Use Darklight",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "400.impassablehchestudeephwater": {
+      "modName": "Impassable Chest-Deep Water",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "ratys.madskills": {
+      "modName": "Mad Skills",
+      "threat": "1",
+      "reason": "Mostly included in: Tweaks Galore"
+    },
+    "tgo.metaldoesntburn": {
+      "modName": "Metal Doesn't Burn",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "gmt.metal.noburn.rw": {
+      "modName": "Metal Don't Burn",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "moretraitslots.kv.rw": {
+      "modName": "More Trait Slots",
+      "threat": "1",
+      "reason": "Mostly included in: Tweaks Galore"
+    },
+    "unon.noburnmetal": {
+      "modName": "No Burn Metal",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "nowayjose.nomoresiegeraids": {
+      "modName": "No More Siege Raids",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "nonarrowfaces.mod": {
+      "modName": "No Narrow Heads",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "weilbyte.nopowerwires": {
+      "modName": "No Power Wires",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "shootex.reinforced.floors": {
+      "modName": "Reinforced Floors - No More Infestations",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "tammybee.restocknotification": {
+      "modName": "Restock Notification",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "scherub.skilledstonecutting": {
+      "modName": "Skilled Stonecutting",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "longman.smallerradiusforanimatreesandshrines": {
+      "modName": "Smaller Radius For Anima Trees, Shrines And Animus Stones",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "kamikadza13.scherub.stonecuttingextended": {
+      "modName": "Stonecutting Extended",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "megatherium.velcroboy333": {
+      "modName": "The Return Of The Megatherium",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "grizzle.turtlefriendlyraids": {
+      "modName": "Turtle Friendly Raids",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "derekbickley.worthlessjunk": {
+      "modName": "Worthless Junk",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "cucumpear.xerigium": {
+      "modName": "Xerigium",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "zhrocks11.stackablechunks_copy": {
+      "modName": "Stackable Chunks [1.4+]",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "joethetech.disablesappers": {
+      "modName": "Disable Sappers",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "nowayjose.nomorebreachraids": {
+      "modName": "No More Breach Raids",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "nowayjose.nomoresapperraids": {
+      "modName": "No More Sapper Raids",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "dakkpasserida.animareplant": {
+      "modName": "Replantable Anima Trees",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "allifreyr.patch.strongermetalwalls": {
+      "modName": "Stronger Metal Walls",
+      "threat": "1",
+      "reason": "Basically included in: Tweaks Galore"
+    },
+    "Dark.Signs": {
+      "modName": "Signs and Comments",
+      "threat": "2",
+      "reason": "Heavy on performance and bugs. Direct replacement: Signs and Comments Continued by Ferris"
+    }
+  }
+}

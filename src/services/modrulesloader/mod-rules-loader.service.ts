@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import * as Papa from 'papaparse';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { ModRuleData, RuleExportData } from '../../ModRuleData';
+import { ModRuleData, RuleExportData, TroublesomeModsDatabase } from '../../ModRuleData';
 @Injectable({
   providedIn: 'root',
 })
@@ -23,7 +23,22 @@ export class ModRulesLoaderService {
     );
   }
 
-  getRules(rulesUrl: string): { [id: string] : ModRuleData; }  {
+  getTroublesomeMods(url: string): Observable<TroublesomeModsDatabase> {
+    return this.http.get<TroublesomeModsDatabase>(url, {responseType: 'json'});
+  }
+
+  getRules(url: string): TroublesomeModsDatabase {
+    var troublesomModsDb: TroublesomeModsDatabase = {};
+    this.getTroublesomeMods(url).subscribe(data => {
+      troublesomModsDb = data;
+    },(error) => {
+      console.error('Error fetching troublesome mods data:', error);
+    });
+    return troublesomModsDb;
+  }
+
+  //DEPRICATED
+  getRulesOld(rulesUrl: string): { [id: string] : ModRuleData; }  {
     var rulesData: { [id: string] : ModRuleData; }  = {};
 
     this.fetchRulesData(rulesUrl).subscribe(

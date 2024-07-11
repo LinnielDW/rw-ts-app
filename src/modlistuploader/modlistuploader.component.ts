@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ModRulesLoaderService } from '../services/modrulesloader/mod-rules-loader.service';
-import { ModRuleData, RuleExportData } from '../ModRuleData';
+import { ModRuleData, RuleExportData, TroublesomeModsDatabase } from '../ModRuleData';
 import {MatTabsModule} from '@angular/material/tabs';
 
 import { FormControl, FormsModule } from '@angular/forms';
@@ -33,7 +33,7 @@ export class ModlistuploaderComponent implements OnInit {
   
   modsParsed: string[] = [];
 
-  rulesData: { [id: string] : ModRuleData; } = {};
+  rulesData: TroublesomeModsDatabase = {};
 
   // pattern = /.*?\(.*?\)/g
   pattern = /\b(?<=\()[a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
@@ -124,12 +124,20 @@ export class ModlistuploaderComponent implements OnInit {
 
   //TODO: consider moving this to a soft match looking for keywords instead of hard dictionary match (like it was before basically)
   getSeverity(item: string): string {
-    var r = this.rulesData[item]?.ratingClass;
+    var r = this.rulesData[item]?.threat;
 
+    switch(r){
+      case "5": return "dire";
+      case "4": return "severe";
+      case "3": return "warning";
+      case "2": return "info";
+      case "1": 
+      default: return "info";
+    }
     return r;
   }
 
   getTooltip(item: string): string {
-    return this.rulesData[item]?.note;
+    return this.rulesData[item]?.reason;
   }
 }
