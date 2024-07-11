@@ -8,39 +8,49 @@ import {
 } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ModRulesLoaderService } from '../services/modrulesloader/mod-rules-loader.service';
-import { ModRuleData, RuleExportData, TroublesomeModsDatabase } from '../ModRuleData';
-import {MatTabsModule} from '@angular/material/tabs';
+import {
+  ModRuleData,
+  RuleExportData,
+  TroublesomeModsDatabase,
+} from '../ModRuleData';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { FormControl, FormsModule } from '@angular/forms';
-import { ModlistadvancedtabComponent } from "../modlistadvancedtab/modlistadvancedtab.component";
+import { ModlistadvancedtabComponent } from '../modlistadvancedtab/modlistadvancedtab.component';
 
 @Component({
   selector: 'modlist-uploader',
   standalone: true,
-  imports: [CommonModule, MatTooltipModule, MatTabsModule, FormsModule, ModlistadvancedtabComponent],
+  imports: [
+    CommonModule,
+    MatTooltipModule,
+    MatTabsModule,
+    FormsModule,
+    ModlistadvancedtabComponent,
+  ],
   templateUrl: './modlistuploader.component.html',
   styleUrl: './modlistuploader.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ModlistuploaderComponent implements OnInit {
-  public defaultRulesUrl: string = 'https://raw.githubusercontent.com/LinnielDW/rw-ts-app/master/public/assets/TroublesomeDatabase.json';
+  public defaultRulesUrl: string =
+    'https://raw.githubusercontent.com/LinnielDW/rw-ts-app/master/public/assets/TroublesomeDatabase.json';
   rulesUrl: string = this.defaultRulesUrl;
-  
+
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     private modlistAnalyserService: ModRulesLoaderService
   ) {}
-  
+
   modsParsed: string[] = [];
 
   rulesData: TroublesomeModsDatabase = {};
 
   // pattern = /.*?\(.*?\)/g
   pattern = /\b(?<=\()[a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
-  
+
   pattern2 = /\b[a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
   // pattern = /\b(?<=\()[^0-9][a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
-
 
   ngOnInit(): void {
     // this.getRules();
@@ -51,17 +61,20 @@ export class ModlistuploaderComponent implements OnInit {
   selected = new FormControl(0);
 
   //TODO: move mod list parsing to own service
-  parseModsInput(event: Event): void{
+  parseModsInput(event: Event): void {
     this.rulesData = this.modlistAnalyserService.getRules(this.rulesUrl);
     this.modsParsed = [];
-    
-    if(this.selected.value == 0){
-      const file = (<HTMLInputElement>document.getElementsByName("ModConfigInput")[0])?.files?.[0];
+
+    if (this.selected.value == 0) {
+      const file = (<HTMLInputElement>(
+        document.getElementsByName('ModConfigInput')[0]
+      ))?.files?.[0];
       this.readModConfigFile(file);
-    }
-    else {
-      const modsTextAreaInput = (<HTMLInputElement>document.getElementsByName("TextAreaInput")[0]).value;
-      console.log(modsTextAreaInput)
+    } else {
+      const modsTextAreaInput = (<HTMLInputElement>(
+        document.getElementsByName('TextAreaInput')[0]
+      )).value;
+      console.log(modsTextAreaInput);
       this.readModlistText(modsTextAreaInput);
     }
   }
@@ -71,12 +84,11 @@ export class ModlistuploaderComponent implements OnInit {
       var modsSplit = modsTextAreaInput.split(/\r?\n/);
 
       var match;
-      modsSplit.forEach(modLine => {
+      modsSplit.forEach((modLine) => {
         match = modLine.match(this.pattern);
         if (match) {
           this.modsParsed.push(match[0].toLowerCase());
-        }
-        else {
+        } else {
           match = modLine.match(this.pattern2);
           if (match) {
             this.modsParsed.push(match[0].toLowerCase());
@@ -125,8 +137,7 @@ export class ModlistuploaderComponent implements OnInit {
       }
     });
 
-    
-    console.debug("loading modlist:")
+    console.debug('loading modlist:');
     console.debug(this.modsParsed);
     // console.log("Logging mods finished.");
     this.changeDetectorRef.detectChanges();
@@ -136,15 +147,19 @@ export class ModlistuploaderComponent implements OnInit {
   getSeverity(item: string): string {
     var r = this.rulesData[item]?.threat;
 
-    switch(r){
-      case "5": return "dire";
-      case "4": return "severe";
-      case "3": return "warning";
-      case "2": return "info";
-      case "1": 
-      default: return "info";
+    switch (r) {
+      case '5':
+        return 'dire';
+      case '4':
+        return 'severe';
+      case '3':
+        return 'warning';
+      case '2':
+        return 'info';
+      case '1':
+      default:
+        return 'info';
     }
-    return r;
   }
 
   getTooltip(item: string): string {

@@ -3,10 +3,7 @@
 
   <mat-tab-group animationDuration="0ms">
     <mat-tab label="Modlist">
-      <div>
-        Instructions:
-        TODO
-      </div>
+      <div>Instructions: TODO</div>
       <mat-tab-group
         animationDuration="0ms"
         [selectedIndex]="selected.value"
@@ -29,7 +26,10 @@
       </div>
     </mat-tab>
     <mat-tab label="Advanced">
-      <modlistadvancedtab [defaultRulesUrl]="defaultRulesUrl" [(rulesUrl)]="rulesUrl" ></modlistadvancedtab>
+      <modlistadvancedtab
+        [defaultRulesUrl]="defaultRulesUrl"
+        [(rulesUrl)]="rulesUrl"
+      ></modlistadvancedtab>
     </mat-tab>
   </mat-tab-group>
 
