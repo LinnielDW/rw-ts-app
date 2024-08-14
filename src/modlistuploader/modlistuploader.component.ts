@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  ElementRef,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -18,6 +19,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { FormControl, FormsModule } from '@angular/forms';
 import { ModlistadvancedtabComponent } from '../modlistadvancedtab/modlistadvancedtab.component';
 
+import {MatChipsModule, MatChipEvent, MatChipListbox, MatChipOption} from '@angular/material/chips';
+
+
 @Component({
   selector: 'modlist-uploader',
   standalone: true,
@@ -27,12 +31,16 @@ import { ModlistadvancedtabComponent } from '../modlistadvancedtab/modlistadvanc
     MatTabsModule,
     FormsModule,
     ModlistadvancedtabComponent,
+    MatChipsModule,
   ],
   templateUrl: './modlistuploader.component.html',
   styleUrl: './modlistuploader.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ModlistuploaderComponent implements OnInit {
+  
+  @ViewChild('chipList') chipList !: ElementRef;
+
   public defaultRulesUrl: string =
     'https://raw.githubusercontent.com/LinnielDW/rw-ts-app/master/public/assets/TroublesomeDatabase.json';
   rulesUrl: string = this.defaultRulesUrl;
@@ -159,11 +167,23 @@ export class ModlistuploaderComponent implements OnInit {
       case '2':
         return 'info';
       default:
-        return '';
+        return 'none';
     }
   }
 
   getTooltip(item: string): string {
     return this.rulesData[item.toLowerCase()]?.reason;
+  }
+
+
+  shouldHide(item: string): boolean {
+    var chipOptions = this.chipList as unknown as MatChipListbox;
+
+    if (Array.isArray(chipOptions.selected)) {
+      return !(chipOptions.selected).some(e => e.selected && e.value.toLowerCase() == this.getSeverity(item.toLowerCase()));
+    } else {
+
+      return (chipOptions.selected).value.toLowerCase() != this.getSeverity(item.toLowerCase());
+    }
   }
 }

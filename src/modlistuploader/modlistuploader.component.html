@@ -11,7 +11,10 @@
       >
         <mat-tab label="Upload ModConfig">
           <br />
-          <input type="file" accept=".xml" name="ModConfigInput" />
+          <div  style="text-align: center;">
+            <input type="file" accept=".xml" name="ModConfigInput" />
+          </div>
+          
         </mat-tab>
         <mat-tab label="Text">
           <br />
@@ -32,9 +35,23 @@
       ></modlistadvancedtab>
     </mat-tab>
   </mat-tab-group>
+  
+  <div [hidden]="modsParsed.length == 0">
+
+    <br/>
+    <label>Severity Filter:</label>
+    <mat-chip-listbox id="chipList" #chipList multiple label="Theat Level">
+      <mat-chip-option selected>None</mat-chip-option>
+      <mat-chip-option selected>Info</mat-chip-option>
+      <mat-chip-option selected>Severe</mat-chip-option>
+      <mat-chip-option selected>Dire</mat-chip-option>
+    </mat-chip-listbox>
+  </div >
+
 
   <div *ngFor="let item of modsParsed; index as i">
     <div
+      [hidden]="shouldHide(item)"
       [matTooltip]="getTooltip(item)"
       matTooltipPosition="right"
       [ngClass]="getSeverity(item)"

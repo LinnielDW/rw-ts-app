@@ -5,20 +5,28 @@
 
 // classifications
 .severe {
+  padding: 1px;
   background-color: red;
   color: white;
+  border: 1px solid black;
 }
 
 .dire {
+  padding: 1px;
   background-color: darkred;
   color: white;
   font-weight: 900;
+  border: 1px solid black;
 }
 .warning {
+  padding: 1px;
   background-color: yellow;
   color: black;
+  border: 1px solid black;
 }
 .info {
+  padding: 1px;
   background-color: cornflowerblue;
   color: black;
+  border: 1px solid black;
 }
