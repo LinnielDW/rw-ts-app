@@ -186,4 +186,15 @@ export class ModlistuploaderComponent implements OnInit {
       return (chipOptions.selected).value.toLowerCase() != this.getSeverity(item.toLowerCase());
     }
   }
+
+  shouldHaveClass(severity: string): boolean {
+    var chipOptions = this.chipList as unknown as MatChipListbox;
+
+    if (Array.isArray(chipOptions?.selected)) {
+      return (chipOptions.selected).some(e => e.selected && e.value.toLowerCase() == severity);
+    } else {
+
+      return (chipOptions?.selected)?.value.toLowerCase() == severity;
+    }
+  }
 }

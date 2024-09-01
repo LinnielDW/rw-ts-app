@@ -18,12 +18,12 @@
         </mat-tab>
         <mat-tab label="Text">
           <br />
-          <textarea name="TextAreaInput"></textarea>
+          <textarea style="height: 160px; width: 90%;" name="TextAreaInput"></textarea>
         </mat-tab>
       </mat-tab-group>
 
       <!-- TODO: remove these horrible brs and actually do some real styling -->
-      <br /><br />
+      <br />
       <div>
         <button (click)="parseModsInput($event)">scan mods</button>
       </div>
@@ -39,12 +39,13 @@
   <div [hidden]="modsParsed.length == 0">
 
     <br/>
-    <label>Severity Filter:</label>
+    <label>Severity Display Filter:</label>
     <mat-chip-listbox id="chipList" #chipList multiple label="Theat Level">
-      <mat-chip-option selected>None</mat-chip-option>
-      <mat-chip-option selected>Info</mat-chip-option>
-      <mat-chip-option selected>Severe</mat-chip-option>
-      <mat-chip-option selected>Dire</mat-chip-option>
+      <mat-chip-option selected [ngClass]="{'chip-none': shouldHaveClass('none')}">None</mat-chip-option>
+      <mat-chip-option selected [ngClass]="{'chip-info': shouldHaveClass('info')}">Info</mat-chip-option>
+      <mat-chip-option selected [ngClass]="{'chip-warning': shouldHaveClass('warning')}">Warning</mat-chip-option>
+      <mat-chip-option selected [ngClass]="{'chip-severe': shouldHaveClass('severe')}">Severe</mat-chip-option>
+      <mat-chip-option selected [ngClass]="{'chip-dire': shouldHaveClass('dire')}">Dire</mat-chip-option>
     </mat-chip-listbox>
   </div >
 

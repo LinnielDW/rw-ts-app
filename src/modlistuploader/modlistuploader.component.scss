@@ -4,29 +4,48 @@
 }
 
 // classifications
+.chip-severe,
 .severe {
   padding: 1px;
-  background-color: red;
-  color: white;
-  border: 1px solid black;
+  background-color: red !important;
+  color: white !important;
+  // border: 1px solid black !important;
 }
 
+.chip-dire,
 .dire {
   padding: 1px;
-  background-color: darkred;
-  color: white;
+  background-color: darkred !important;
+  color: white !important;
   font-weight: 900;
-  border: 1px solid black;
+  // border: 1px solid black;
 }
+.chip-warning,
 .warning {
   padding: 1px;
-  background-color: yellow;
-  color: black;
-  border: 1px solid black;
+  background-color: #f39c11 !important;
+  // color: black !important;
+  // border: 1px solid black !important;
 }
+.chip-info,
 .info {
   padding: 1px;
-  background-color: cornflowerblue;
-  color: black;
-  border: 1px solid black;
+  background-color: cornflowerblue !important;
+  color: black !important;
+  // border: 1px solid black !important;
+}
+
+.chip-none
+// ,.none
+ {
+  padding: 1px;
+  background-color: grey !important;
+  color: black !important;
+  // border: 1px solid black !important;
+  // font: 100px solid black;
+}
+
+
+.mat-mdc-standard-chip {
+  background-color: blue;
 }
