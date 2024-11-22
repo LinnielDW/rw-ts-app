@@ -50,6 +50,11 @@
       "threat": "4",
       "reason": "Old, slow - so is everything using it as dependency. Basically everything based on it can be replaced with more modern solutions."
     },
+    "sickboywi.sicktools": {
+      "modName": "SickTools",
+      "threat": "4",
+      "reason": "A fork of JecsTools. Old, slow - so is everything using it as dependency. Basically everything based on it can be replaced with more modern solutions."
+    },
     "CarnySenpai.EnableOversizedWeapons": {
       "modName": "Enable Oversized Weapons",
       "threat": "3",
@@ -330,6 +335,11 @@
       "threat": "3",
       "reason": "Old, buggy, unmaintained. Direct Replacement: Tacticowl"
     },
+    "memegoddess.searchanddestroy": {
+      "modName": "Search and Destroy (Unofficial Update)",
+      "threat": "2",
+      "reason": "Code based off of the original, use at own risk."
+    },
     "wvc.sergkart.biotech.mechanoididleoptimization": {
       "modName": "Mechanoid Idle Optimization",
       "threat": "4",
@@ -475,11 +485,6 @@
       "threat": "1",
       "reason": "Basically included in: Tweaks Galore"
     },
-    "ratys.madskills": {
-      "modName": "Mad Skills",
-      "threat": "1",
-      "reason": "Mostly included in: Tweaks Galore"
-    },
     "tgo.metaldoesntburn": {
       "modName": "Metal Doesn't Burn",
       "threat": "1",
@@ -594,6 +599,16 @@
       "modName": "Signs and Comments",
       "threat": "2",
       "reason": "Heavy on performance and bugs. Direct replacement: Signs and Comments Continued by Ferris"
+    },
+    "lifeisgame.saiyanrace": {
+      "modName": "The Saiyans",
+      "threat": "3",
+      "reason": "Highly buggy, and with modern iterations having incompatibilities with numorous mods due to harmony patching approach"
+    },
+    "Mod.PackageId": {
+      "modName": "ModName",
+      "threat": "5",
+      "reason": "Give Reason"
     }
   }
 }
