@@ -1,9 +1,31 @@
 <div class="container">
-  <h2>Modlist checker</h2>
+  <h2>Rimworld Modlist Troubleshooter App</h2>
 
   <mat-tab-group animationDuration="0ms">
     <mat-tab label="Modlist">
-      <div>Instructions: TODO</div>
+      <div style="margin-top: 16px; font-size: small;">
+          <span>Instructions for Uploading a ModConfig</span>
+          <ul>
+            <li>Click "Upload ModConfig tab."</li>
+            <li>Click "Choose File" button.</li>
+            <li>Navigate to location of ModConfig and open it.</li>
+              <ul>
+                <li>Usually found in AppData (eg. <code style="border-radius: 4px; background-color: lightgrey; padding: 2px;">C:\Users\UserName\AppData\LocalLow\Ludeon Studios\RimWorld by Ludeon Studios\Config</code>).</li>
+              </ul>
+            <li>Click the "Scan Mods" Button.</li>
+            <li>Inspect scanned entries and filter using filters as desired. Hover over entries for tooltips about them.</li>
+          </ul>
+          
+          <div>Instructions for uploading from a text dump</div>
+          <ul>
+              <li>Copy list from source (eg. HugsLog/Pastebin/Rentry).</li>
+              <li>Click "Text" tab.</li>
+              <li>Paste mod list into text area.</li>
+              <li>Click the "Scan Mods" Button.</li>
+              <li>Inspect scanned entries and filter using filters as desired. Hover over entries for tooltips about them.</li>
+          </ul>
+      </div>
+
       <mat-tab-group
         animationDuration="0ms"
         [selectedIndex]="selected.value"
@@ -36,28 +58,32 @@
     </mat-tab>
   </mat-tab-group>
   
-  <div [hidden]="modsParsed.length == 0">
+  <div [hidden]="modsParsed.length == 0" style="margin-top:8px">
+    <mat-tab-group>
+      <mat-tab label="Scanned Mods">
+        <div style="margin-top:8px;">Threat Sevierty Filter:</div>
+        <mat-chip-listbox id="chipList" #chipList multiple label="Theat Level">
+          <mat-chip-option selected [ngClass]="{'chip-none': shouldHaveClass('none')}">None</mat-chip-option>
+          <mat-chip-option selected [ngClass]="{'chip-info': shouldHaveClass('info')}">Info</mat-chip-option>
+          <mat-chip-option selected [ngClass]="{'chip-warning': shouldHaveClass('warning')}">Warning</mat-chip-option>
+          <mat-chip-option selected [ngClass]="{'chip-severe': shouldHaveClass('severe')}">Severe</mat-chip-option>
+          <mat-chip-option selected [ngClass]="{'chip-dire': shouldHaveClass('dire')}">Dire</mat-chip-option>
+        </mat-chip-listbox>
 
-    <br/>
-    <label>Severity Display Filter:</label>
-    <mat-chip-listbox id="chipList" #chipList multiple label="Theat Level">
-      <mat-chip-option selected [ngClass]="{'chip-none': shouldHaveClass('none')}">None</mat-chip-option>
-      <mat-chip-option selected [ngClass]="{'chip-info': shouldHaveClass('info')}">Info</mat-chip-option>
-      <mat-chip-option selected [ngClass]="{'chip-warning': shouldHaveClass('warning')}">Warning</mat-chip-option>
-      <mat-chip-option selected [ngClass]="{'chip-severe': shouldHaveClass('severe')}">Severe</mat-chip-option>
-      <mat-chip-option selected [ngClass]="{'chip-dire': shouldHaveClass('dire')}">Dire</mat-chip-option>
-    </mat-chip-listbox>
+        <div style="margin-top:8px;">Mods:</div>
+        <div style="margin-left:8px">
+          <div *ngFor="let item of modsParsed; index as i">
+            <div
+              [hidden]="shouldHide(item)"
+              [matTooltip]="getTooltip(item)"
+              matTooltipPosition="right"
+              [ngClass]="getSeverity(item)"
+            >
+              {{ item }}
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
   </div >
-
-
-  <div *ngFor="let item of modsParsed; index as i">
-    <div
-      [hidden]="shouldHide(item)"
-      [matTooltip]="getTooltip(item)"
-      matTooltipPosition="right"
-      [ngClass]="getSeverity(item)"
-    >
-      {{ item }}
-    </div>
-  </div>
 </div>
