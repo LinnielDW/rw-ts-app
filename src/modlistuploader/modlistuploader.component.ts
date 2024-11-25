@@ -58,6 +58,7 @@ export class ModlistuploaderComponent implements OnInit {
   pattern = /\b(?<=\()[a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
 
   pattern2 = /\b[a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
+  rentryPattern = /packageId:.*\b[a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
   // pattern = /\b(?<=\()[^0-9][a-zA-Z0-9]+\.[a-zA-Z0-9.]+\b/g;
 
   ngOnInit(): void {
@@ -95,6 +96,12 @@ export class ModlistuploaderComponent implements OnInit {
       var match;
       modsSplit.forEach((modLine) => {
         match = modLine.match(this.pattern);
+        if(modLine.includes("packageId:")){
+          match = modLine.match(this.rentryPattern);
+          if(match) {
+            match[0] = match[0].substring(10, match[0].length).trim();
+          }
+        }
         if (match) {
           this.modsParsed.push(match[0].toLowerCase());
         } else {
