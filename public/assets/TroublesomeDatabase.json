@@ -83,7 +83,7 @@
     "ratys.madskills": {
       "modName": "Mad Skills",
       "threat": "1",
-      "reason": "Currently incompatible with Vanilla Skills Expanded. "
+      "reason": "Currently incompatible with Vanilla Skills Expanded. Can be replaced with Galore Tweaks (Look at the mod settings)"
     },
     "nerdwonder.mixedblock": {
       "modName": "Mixed Stone Blocks",
@@ -604,6 +604,27 @@
       "modName": "The Saiyans",
       "threat": "3",
       "reason": "Highly buggy, and with modern iterations having incompatibilities with numorous mods due to harmony patching approach"
+    },
+    "torann.rimwar": {
+      "modName": "Rimwar",
+      "threat": "4",
+      "reason": "Rimwar :("
+    },
+    "avius.locks": {
+      "modName": "Locks",
+      "threat": "4",
+      "reason": "Severe performance impact"
+    },
+    
+    "avius.prisonlabor": {
+      "modName": "Prison Labor",
+      "threat": "4",
+      "reason": "Severe performance impact and known bugs."
+    },
+    "co.uk.epicguru.meleeanimation": {
+      "modName": "Melee Animations",
+      "threat": "1",
+      "reason": "Use multithreading options"
     },
     "Mod.PackageId": {
       "modName": "ModName",
